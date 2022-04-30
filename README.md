@@ -1,6 +1,6 @@
 # pHash - http://www.phash.org
 
-### What have I done with [the original repo](https://github.com/aetilius/pHash) on Ubuntu as root
+### What have I done with [the original repo](https://github.com/aetilius/pHash) on Ubuntu Desktop 20 as root
 ```bash
 apt update
 #apt install --fix-missing
@@ -31,7 +31,7 @@ cp -R "$official_version/m4" "pHash/m4"
 ```
 
 ### Modified Files, Base on [Official Repo](https://github.com/aetilius/pHash) and [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
-- README
+- .gitignore
 - configure.ac:252
 - examples/Makefile.am:2
 
