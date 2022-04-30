@@ -4,7 +4,7 @@ libpHash_la_LDFLAGS = -no-undefined
 include_HEADERS = pHash.h
 
 if HAVE_AUDIO_HASH
-libpHash_la_SOURCES += audiophash.cpp ph_fft.c
+libpHash_la_SOURCES += audiophash.cpp ph_fft.cpp
 include_HEADERS += audiophash.h ph_fft.h
 endif
 

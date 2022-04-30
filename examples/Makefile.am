@@ -1,5 +1,5 @@
 INCLUDES = -I$(top_srcdir)/src
-noinst_PROGRAMS = test_texthash test_texthash2
+noinst_PROGRAMS = test_texthash #test_texthash2
 
 test_texthash_SOURCES = test_texthash.cpp
 test_texthash_LDADD = $(top_builddir)/src/libpHash.la
