@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 WORKDIR /app
 
-# prevent ztdata prompt an user interactive dialog
+# prevent `ztdata` prompt an user interactive dialog
 ARG DEBIAN_FRONTEND=noninteractive
 
 ARG GIT_PROXY=""
@@ -11,16 +11,16 @@ ENV git_proxy=$GIT_PROXY
 RUN echo 'APT::Acquire::Retries "9999";' > /etc/apt/apt.conf.d/80-retries
 
 # change archive host to aliyun
-RUN { \
-      echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse"; \
-      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse"; \
-      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse"; \
-      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse"; \
-      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse"; \
-      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse"; \
-      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse"; \
-      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse"; \
-    } > /etc/apt/sources.list
+#RUN { \
+#      echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse"; \
+#      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse"; \
+#      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse"; \
+#      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse"; \
+#      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse"; \
+#      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse"; \
+#      echo "deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse"; \
+#      echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse"; \
+#    } > /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y \
       git \

@@ -37,12 +37,7 @@ cp -R "$official_version/m4" "pHash/m4"
 
 ### Installation
 ```bash
-autoreconf
-aclocal && libtoolize --force && automake --add-missing && autoreconf
-automake
-# still working on why ./configure throws "libavcodec not found"
-./configure --enable-video-hash=no
-make && make install
+chmod +x ./docker/install.sh && ./docker/install.sh
 
 # test
 ./examples/test_mhimagehash pHash.png pHash.png
