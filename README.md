@@ -33,9 +33,14 @@ cp -R "$official_version/m4" "pHash/m4"
 ```
 
 ### Modified Files, Base on [Official Repo](https://github.com/aetilius/pHash) and [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
-- .gitignore
-- configure.ac:252
-- examples/Makefile.am:2
+- Modified
+  - .gitignore
+  - configure.ac:252
+  - examples/Makefile.am:2
+- New
+  - bindings/go
+  - docker
+  - README.md
 
 ### Installation on Ubuntu 20
 ```bash
