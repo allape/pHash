@@ -21,11 +21,11 @@ void goPhMhImageHash(int alpha, int level, char *img, unsigned char *output) {
     free(hash);
 }
 
-double goPhHammingDistance2(char* hash1, int hashlen1, char* hash2, int hashlen2) {
+double goPhHammingDistance2(unsigned char *hash1, int hashlen1, unsigned char *hash2, int hashlen2) {
     return ph_hammingdistance2((uint8_t*)hash1, hashlen1, (uint8_t*)hash2, hashlen2);
 }
 
-double distance(char *img1, char *img2) {
+double goPhMhImageDistance(char *img1, char *img2) {
     int alpha = 2;
     int level = 1;
 

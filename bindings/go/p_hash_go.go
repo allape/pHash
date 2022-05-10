@@ -31,15 +31,15 @@ typedef struct { void* array; intgo len; intgo cap; } _goslice_;
 
 typedef _gostring_ swig_type_1;
 typedef _goslice_ swig_type_2;
-typedef _gostring_ swig_type_3;
-typedef _gostring_ swig_type_4;
+typedef _goslice_ swig_type_3;
+typedef _goslice_ swig_type_4;
 typedef _gostring_ swig_type_5;
 typedef _gostring_ swig_type_6;
-extern void _wrap_Swig_free_p_hash_go_6e6a0f465b27f9b3(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_p_hash_go_6e6a0f465b27f9b3(swig_intgo arg1);
-extern void _wrap_goPhMhImageHash_p_hash_go_6e6a0f465b27f9b3(swig_intgo arg1, swig_intgo arg2, swig_type_1 arg3, swig_type_2 arg4);
-extern double _wrap_goPhHammingDistance2_p_hash_go_6e6a0f465b27f9b3(swig_type_3 arg1, swig_intgo arg2, swig_type_4 arg3, swig_intgo arg4);
-extern double _wrap_distance_p_hash_go_6e6a0f465b27f9b3(swig_type_5 arg1, swig_type_6 arg2);
+extern void _wrap_Swig_free_p_hash_go_f6ef06289889987c(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_p_hash_go_f6ef06289889987c(swig_intgo arg1);
+extern void _wrap_goPhMhImageHash_p_hash_go_f6ef06289889987c(swig_intgo arg1, swig_intgo arg2, swig_type_1 arg3, swig_type_2 arg4);
+extern double _wrap_goPhHammingDistance2_p_hash_go_f6ef06289889987c(swig_type_3 arg1, swig_intgo arg2, swig_type_4 arg3, swig_intgo arg4);
+extern double _wrap_goPhMhImageDistance_p_hash_go_f6ef06289889987c(swig_type_5 arg1, swig_type_6 arg2);
 #undef intgo
 */
 import "C"
@@ -47,6 +47,10 @@ import "C"
 import "unsafe"
 import _ "runtime/cgo"
 import "sync"
+import "errors"
+import "encoding/hex"
+import "fmt"
+import "strings"
 
 
 type _ unsafe.Pointer
@@ -65,13 +69,13 @@ type _ sync.Mutex
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_p_hash_go_6e6a0f465b27f9b3(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_p_hash_go_f6ef06289889987c(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_p_hash_go_6e6a0f465b27f9b3(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_p_hash_go_f6ef06289889987c(C.swig_intgo(_swig_i_0)))
 	return swig_r
 }
 
@@ -80,7 +84,7 @@ func GoPhMhImageHash(arg1 int, arg2 int, arg3 string, arg4 []byte) {
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_goPhMhImageHash_p_hash_go_6e6a0f465b27f9b3(C.swig_intgo(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_3)))
+	C._wrap_goPhMhImageHash_p_hash_go_f6ef06289889987c(C.swig_intgo(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -89,13 +93,13 @@ func GoPhMhImageHash(arg1 int, arg2 int, arg3 string, arg4 []byte) {
 	}
 }
 
-func GoPhHammingDistance2(arg1 string, arg2 int, arg3 string, arg4 int) (_swig_ret float64) {
+func GoPhHammingDistance2(arg1 []byte, arg2 int, arg3 []byte, arg4 int) (_swig_ret float64) {
 	var swig_r float64
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (float64)(C._wrap_goPhHammingDistance2_p_hash_go_6e6a0f465b27f9b3(*(*C.swig_type_3)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3)))
+	swig_r = (float64)(C._wrap_goPhHammingDistance2_p_hash_go_f6ef06289889987c(*(*C.swig_type_3)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
@@ -105,11 +109,11 @@ func GoPhHammingDistance2(arg1 string, arg2 int, arg3 string, arg4 int) (_swig_r
 	return swig_r
 }
 
-func Distance(arg1 string, arg2 string) (_swig_ret float64) {
+func GoPhMhImageDistance(arg1 string, arg2 string) (_swig_ret float64) {
 	var swig_r float64
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (float64)(C._wrap_distance_p_hash_go_6e6a0f465b27f9b3(*(*C.swig_type_5)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_6)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (float64)(C._wrap_goPhMhImageDistance_p_hash_go_f6ef06289889987c(*(*C.swig_type_5)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_6)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
@@ -118,5 +122,44 @@ func Distance(arg1 string, arg2 string) (_swig_ret float64) {
 	}
 	return swig_r
 }
+
+
+
+func ImageHashString(alpha, level int, image string) (string, error) {
+	hash := make([]byte, 256)
+	GoPhMhImageHash(alpha, level, image, hash)
+  if len(hash) < 1 {
+    return "", errors.New("hash wrapper length less than 1")
+  }
+  hashLength := int(hash[0])
+  if hashLength < 1 {
+    return "", errors.New("hash length less than 1")
+  }
+  hashStringArray := make([]string, hashLength)
+  for i, b := range hash {
+		if i == 0 {
+			continue
+		}
+		if i > int(hash[0]) {
+			break
+		}
+		hashStringArray[i - 1] = fmt.Sprintf("%02X", b)
+	}
+  return strings.Join(hashStringArray, ""), nil
+}
+
+func HashStringDistance(hash1, hash2 string) (float64, error) {
+  hashByteArr1, err := hex.DecodeString(hash1)
+  if err != nil {
+      return 0, err
+  }
+  hashByteArr2, err := hex.DecodeString(hash2)
+  if err != nil {
+      return 0, err
+  }
+  distance := GoPhHammingDistance2(hashByteArr1, len(hashByteArr1), hashByteArr2, len(hashByteArr2))
+  return distance, nil
+}
+
 
 
