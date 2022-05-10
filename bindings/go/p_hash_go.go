@@ -13,8 +13,7 @@
 package p_hash_go
 
 /*
-#cgo LDFLAGS: -L/usr/local/lib -lpHash --verbose
-
+#cgo LDFLAGS: -L/usr/local/lib -lpHash
 #define intgo swig_intgo
 typedef void *swig_voidp;
 
@@ -31,10 +30,16 @@ typedef struct { void* array; intgo len; intgo cap; } _goslice_;
 
 
 typedef _gostring_ swig_type_1;
-typedef _gostring_ swig_type_2;
-extern void _wrap_Swig_free_p_hash_go_55d496403e0278b3(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_p_hash_go_55d496403e0278b3(swig_intgo arg1);
-extern double _wrap_distance_p_hash_go_55d496403e0278b3(swig_type_1 arg1, swig_type_2 arg2);
+typedef _goslice_ swig_type_2;
+typedef _gostring_ swig_type_3;
+typedef _gostring_ swig_type_4;
+typedef _gostring_ swig_type_5;
+typedef _gostring_ swig_type_6;
+extern void _wrap_Swig_free_p_hash_go_6e6a0f465b27f9b3(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_p_hash_go_6e6a0f465b27f9b3(swig_intgo arg1);
+extern void _wrap_goPhMhImageHash_p_hash_go_6e6a0f465b27f9b3(swig_intgo arg1, swig_intgo arg2, swig_type_1 arg3, swig_type_2 arg4);
+extern double _wrap_goPhHammingDistance2_p_hash_go_6e6a0f465b27f9b3(swig_type_3 arg1, swig_intgo arg2, swig_type_4 arg3, swig_intgo arg4);
+extern double _wrap_distance_p_hash_go_6e6a0f465b27f9b3(swig_type_5 arg1, swig_type_6 arg2);
 #undef intgo
 */
 import "C"
@@ -60,13 +65,43 @@ type _ sync.Mutex
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_p_hash_go_55d496403e0278b3(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_p_hash_go_6e6a0f465b27f9b3(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_p_hash_go_55d496403e0278b3(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_p_hash_go_6e6a0f465b27f9b3(C.swig_intgo(_swig_i_0)))
+	return swig_r
+}
+
+func GoPhMhImageHash(arg1 int, arg2 int, arg3 string, arg4 []byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	C._wrap_goPhMhImageHash_p_hash_go_6e6a0f465b27f9b3(C.swig_intgo(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_3)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg4
+	}
+}
+
+func GoPhHammingDistance2(arg1 string, arg2 int, arg3 string, arg4 int) (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (float64)(C._wrap_goPhHammingDistance2_p_hash_go_6e6a0f465b27f9b3(*(*C.swig_type_3)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_2)), C.swig_intgo(_swig_i_3)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg1
+	}
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
 	return swig_r
 }
 
@@ -74,7 +109,7 @@ func Distance(arg1 string, arg2 string) (_swig_ret float64) {
 	var swig_r float64
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (float64)(C._wrap_distance_p_hash_go_55d496403e0278b3(*(*C.swig_type_1)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (float64)(C._wrap_distance_p_hash_go_6e6a0f465b27f9b3(*(*C.swig_type_5)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_6)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}

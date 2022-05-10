@@ -11,12 +11,14 @@
 - ```bash
     chmod +x swig.go.sh && ./swig.go.sh
   ```
-- Insert `#cgo LDFLAGS: -L/usr/local/lib -lpHash --verbose` to the first line of comment of `import "C"` in [`p_hash_go.go`](./p_hash_go.go). `--verbose` is not required in `LDFLAGS`, but it makes debugging easier 😄.
+- Insert `#cgo LDFLAGS: -L/usr/local/lib -lpHash` to the first line of comment of `import "C"` in [`p_hash_go.go`](./p_hash_go.go). 
+  - Insert `--verbose` in `LDFLAGS` to display debug info, and go command must run with env `CGO_LDFLAGS_ALLOW='--verbose'`.
 - Tests
   ```bash
-    CGO_LDFLAGS_ALLOW='--verbose' go test
+    go test
   ```
 - `go install`
   ```bash
-    CGO_LDFLAGS_ALLOW='--verbose' go install
+    # sudo /usr/local/go/bin/go install
+    go install
   ```

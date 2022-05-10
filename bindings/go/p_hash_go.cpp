@@ -2,8 +2,28 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
+#include <cmath>
 #include "math.h"
 #include "pHash.h"
+
+void hashWithLength(uint8_t *hash, int hashLen, unsigned char *output) {
+    output[0] = (unsigned char) std::abs(hashLen);
+    for (int i = 0; i < hashLen; i++) {
+        output[i + 1] = hash[i];
+    }
+}
+
+void goPhMhImageHash(int alpha, int level, char *img, unsigned char *output) {
+    int hashlen;
+    uint8_t *hash = ph_mh_imagehash(img, hashlen, alpha, level);
+    hashWithLength(hash, hashlen, output);
+    free(hash);
+}
+
+double goPhHammingDistance2(char* hash1, int hashlen1, char* hash2, int hashlen2) {
+    return ph_hammingdistance2((uint8_t*)hash1, hashlen1, (uint8_t*)hash2, hashlen2);
+}
 
 double distance(char *img1, char *img2) {
     int alpha = 2;
@@ -14,7 +34,6 @@ double distance(char *img1, char *img2) {
     uint8_t *hash1 = ph_mh_imagehash(img1, hashlen1, alpha, level);
     uint8_t *hash2 = ph_mh_imagehash(img2, hashlen2, alpha, level);
     if (hash2 == NULL || hash1 == NULL) {
-        printf("Unable to generate hash");
         return 0;
     }
 

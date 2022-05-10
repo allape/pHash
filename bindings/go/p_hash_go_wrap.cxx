@@ -246,7 +246,7 @@ static void* Swig_malloc(int c) {
 extern "C" {
 #endif
 
-void _wrap_Swig_free_p_hash_go_55d496403e0278b3(void *_swig_go_0) {
+void _wrap_Swig_free_p_hash_go_6e6a0f465b27f9b3(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -256,7 +256,7 @@ void _wrap_Swig_free_p_hash_go_55d496403e0278b3(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_p_hash_go_55d496403e0278b3(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_p_hash_go_6e6a0f465b27f9b3(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -269,7 +269,64 @@ void *_wrap_Swig_malloc_p_hash_go_55d496403e0278b3(intgo _swig_go_0) {
 }
 
 
-double _wrap_distance_p_hash_go_55d496403e0278b3(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_goPhMhImageHash_p_hash_go_6e6a0f465b27f9b3(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
+  int arg1 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  unsigned char *arg4 = (unsigned char *) 0 ;
+  
+  arg1 = (int)_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  arg3 = (char *)malloc(_swig_go_2.n + 1);
+  memcpy(arg3, _swig_go_2.p, _swig_go_2.n);
+  arg3[_swig_go_2.n] = '\0';
+  
+  {
+    if (_swig_go_3.len == 0) {
+      _swig_gopanic("array must contain at least 1 element");
+    }
+    arg4 = (unsigned char *) _swig_go_3.array;
+  }
+  
+  goPhMhImageHash(arg1,arg2,arg3,arg4);
+  
+  
+  free(arg3); 
+  
+}
+
+
+double _wrap_goPhHammingDistance2_p_hash_go_6e6a0f465b27f9b3(_gostring_ _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, intgo _swig_go_3) {
+  char *arg1 = (char *) 0 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  int arg4 ;
+  double result;
+  double _swig_go_result;
+  
+  
+  arg1 = (char *)malloc(_swig_go_0.n + 1);
+  memcpy(arg1, _swig_go_0.p, _swig_go_0.n);
+  arg1[_swig_go_0.n] = '\0';
+  
+  arg2 = (int)_swig_go_1; 
+  
+  arg3 = (char *)malloc(_swig_go_2.n + 1);
+  memcpy(arg3, _swig_go_2.p, _swig_go_2.n);
+  arg3[_swig_go_2.n] = '\0';
+  
+  arg4 = (int)_swig_go_3; 
+  
+  result = (double)goPhHammingDistance2(arg1,arg2,arg3,arg4);
+  _swig_go_result = result; 
+  free(arg1); 
+  free(arg3); 
+  return _swig_go_result;
+}
+
+
+double _wrap_distance_p_hash_go_6e6a0f465b27f9b3(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   double result;
