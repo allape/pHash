@@ -17,10 +17,3 @@ apt-get install -y \
   git cmake autoconf automake build-essential \
   cimg-dev libpthread-stubs0-dev ffmpeg \
   libpng-dev libjpeg-dev libtiff-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libsndfile1-dev libsamplerate0-dev libmpg123-dev
-
-# shellcheck disable=SC2154
-git config --global http.proxy "$git_proxy"
-git config --global https.proxy "$git_proxy"
-git clone --depth 1 "https://github.com/allape/pHash.git"
-git config --global --unset http.proxy
-git config --global --unset https.proxy

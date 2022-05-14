@@ -11,6 +11,9 @@ ENV git_proxy=$GIT_PROXY
 ADD prepare.sh ./
 RUN chmod +x ./prepare.sh && ./prepare.sh
 
+ADD download.sh ./
+RUN chmod +x ./download.sh && ./download.sh
+
 ADD install.sh ./
 RUN chmod +x ./install.sh && ./install.sh
 
