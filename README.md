@@ -34,10 +34,17 @@ cp -R "$official_version/m4" "pHash/m4"
   - .gitignore
   - configure.ac
   - examples/Makefile.am
+  - examples/Makefile.in
   - phash-win32/src/cimgffmpeg.cpp
+  - src/Makefile.am
+  - src/Makefile.in
+- Migrated
+  - configure.ac
+  - Makefile.am
+  - m4/ax_pthread.m4
 - New
-  - bindings/go/
-  - docker/
+  - bindings/go/*
+  - docker/*
   - README.md
 
 ### Installation on Ubuntu:focal with `aliyun` mirror
