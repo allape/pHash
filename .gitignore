@@ -7,49 +7,51 @@ src/pHash.h
 
 aclocal.m4
 cmake_install.cmake
-Makefile
-Makefile.in
+CMakeCache.txt
 compile
 configure
-depcomp
 config.log
 config.guess
 config.status
 config.sub
 config.h
 config.h.in
-pHash-config.h
-pHash.pc
-stamp-h1
-stamp-h2
-missing
-CMakeCache.txt
 CPackConfig.cmake
 CPackSourceConfig.cmake
+depcomp
 install-sh
 libtool
+Makefile
+Makefile.in
+missing
+pHash.pc
+pHash-config.h
+stamp-h1
+stamp-h2
 
 autom4te.cache
 CMakeFiles
 
 src/.deps
 src/.libs
-src/Makefile
 src/*.o
 src/*.la
 src/*.lo
+src/Makefile
 
 examples/.deps
 examples/.libs
 examples/Makefile
+examples/test_*.o
 examples/test_audio
 examples/test_image
 examples/test_mhimagehash
 examples/test_texthash
-examples/test_*.o
 
 bindings/Makefile
 bindings/Makefile.in
+bindings/java/.deps
 bindings/java/Makefile
 bindings/java/Makefile.in
-bindings/java/.deps
+
+Release

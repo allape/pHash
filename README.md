@@ -1,6 +1,6 @@
 # pHash - http://www.phash.org
 
-### ⚠️ Dockerized pHash does NOT support video hashing yet, and non-image hashing is not tested yet
+### ⚠️ `av_frame_alloc` may emit errors, not tested in Windows ⚠️
 
 ### What have I done with [the original repo](https://github.com/aetilius/pHash) on Ubuntu:focal as root
 ```bash
@@ -32,8 +32,9 @@ cp -R "$official_version/m4" "pHash/m4"
 ### Modified Files, Base on [Official Repo](https://github.com/aetilius/pHash) and [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
 - Modified
   - .gitignore
-  - configure.ac:252
-  - examples/Makefile.am:2
+  - configure.ac
+  - examples/Makefile.am
+  - phash-win32/src/cimgffmpeg.cpp
 - New
   - bindings/go/
   - docker/

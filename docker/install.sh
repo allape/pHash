@@ -4,16 +4,15 @@ cd pHash || exit 1
 
 # generate header file
 cmake configure .
-cmake .
-make clean
+cmake -DWITH_AUDIO_HASH=1 -DWITH_VIDEO_HASH=1 .
 
 # make version match
-aclocal && libtoolize --force && autoconf
+aclocal && libtoolize --force
 automake --add-missing
 autoreconf
 
 # final build
-./configure --enable-video-hash=no
+./configure
 make && make install
 
 cd ..

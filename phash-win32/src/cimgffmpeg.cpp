@@ -79,11 +79,11 @@ _declspec(dllexport) int ReadFrames(VFInfo *st_info,
     AVFrame *pFrame;
 
     // Allocate video frame
-    pFrame = avcodec_alloc_frame();
+    pFrame = av_frame_alloc();
     if (pFrame == NULL) return -1;
 
     // Allocate an AVFrame structure
-    AVFrame *pConvertedFrame = avcodec_alloc_frame();
+    AVFrame *pConvertedFrame = av_frame_alloc();
     if (pConvertedFrame == NULL) return -1;
 
     uint8_t *buffer;
@@ -233,10 +233,10 @@ __declspec(dllexport) int NextFrames(VFInfo *st_info,
     AVFrame *pFrame;
 
     // Allocate video frame
-    pFrame = avcodec_alloc_frame();
+    pFrame = av_frame_alloc();
 
     // Allocate an AVFrame structure
-    AVFrame *pConvertedFrame = avcodec_alloc_frame();
+    AVFrame *pConvertedFrame = av_frame_alloc();
     if (pConvertedFrame == NULL) {
         return -1;
     }

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([pHash],[0.9.6],[support@phash.org])
+AC_INIT([pHash],[0.9.7],[support@phash.org])
 AM_INIT_AUTOMAKE($PACKAGE_NAME,$PACKAGE_VERSION)
 AC_CONFIG_SRCDIR([src/pHash.cpp])
 AC_CONFIG_HEADERS([config.h pHash-config.h])
@@ -122,7 +122,7 @@ fi])
 AC_DEFUN([AC_CHECK_FFMPEG],
 [
 AC_MSG_CHECKING([whether FFmpeg is present])
-AC_CHECK_LIB([avcodec], [avcodec_alloc_frame], [], [AC_MSG_ERROR([
+AC_CHECK_LIB([avcodec], [avcodec_version], [], [AC_MSG_ERROR([
 
 *** libavcodec not found.
 You need FFmpeg. Get it at <http://ffmpeg.org/>])])
@@ -235,6 +235,36 @@ AS_IF([test "x$enable_audio_hash" != "xno"],
 	])
 
 AM_CONDITIONAL(HAVE_AUDIO_HASH, [test "x$enable_audio_hash" != "xno"])
+
+# check for operating system
+# https://stackoverflow.com/questions/38898591/how-to-check-the-os-with-automake
+# AC_CANONICAL_HOST is needed to access the 'host_os' variable
+AC_CANONICAL_HOST
+
+build_linux=no
+build_windows=no
+build_mac=no
+
+# Detect the target system
+case "${host_os}" in
+    linux*)
+        build_linux=yes
+        ;;
+    cygwin*|mingw*)
+        build_windows=yes
+        ;;
+    darwin*)
+        build_mac=yes
+        ;;
+    *)
+        AC_MSG_ERROR(["OS $host_os is not supported"])
+        ;;
+esac
+
+# Pass the conditionals to automake
+AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
+AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
+AM_CONDITIONAL([OSX], [test "$build_mac" = "yes"])
 
 # Checks for libraries.
 AC_ARG_WITH([libpng], AS_HELP_STRING([--without-libpng], [do not include libpng support]))
