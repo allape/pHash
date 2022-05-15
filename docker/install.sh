@@ -10,7 +10,7 @@ cmake -DWITH_AUDIO_HASH=1 -DWITH_VIDEO_HASH=1 .
 libtoolize --force
 
 # FIXME building in docker will cause `libtoolize` putting `ltmain.sh` into parent folder
-if [[ ! -z "${DOCKER_BUILDING}" ]]; then
+if [[ -n "${DOCKER_BUILDING}" ]]; then
   mv ../ltmain.sh ./
 fi
 
