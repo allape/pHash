@@ -8,14 +8,16 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG GIT_PROXY=""
 ENV git_proxy=$GIT_PROXY
 
-ADD prepare.sh ./
+COPY prepare.sh .
 RUN chmod +x ./prepare.sh && ./prepare.sh
 
-ADD download.sh ./
+COPY download.sh .
 RUN chmod +x ./download.sh && ./download.sh
 
-ENV DOCKER_BUILDING "1"
-ADD install.sh ./
-RUN chmod +x ./install.sh && ./install.sh
+WORKDIR pHash
+COPY install.sh docker-install.sh
+RUN chmod +x ./docker-install.sh && ./docker-install.sh
+
+WORKDIR /app
 
 CMD ["./pHash/examples/test_mhimagehash", "./pHash/pHash.png", "./pHash/pHash.png"]
