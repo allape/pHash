@@ -41,3 +41,5 @@ chmod +x ./build.sh
 ```
 
 [Docker Hub](https://hub.docker.com/r/allape/phash)
+
+### More Info on [GitHub](https://github.com/allape/pHash)
