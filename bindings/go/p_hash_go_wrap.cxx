@@ -246,7 +246,7 @@ static void* Swig_malloc(int c) {
 extern "C" {
 #endif
 
-void _wrap_Swig_free_p_hash_go_f6ef06289889987c(void *_swig_go_0) {
+void _wrap_Swig_free_p_hash_go_72faf8364d2f0b3b(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -256,7 +256,7 @@ void _wrap_Swig_free_p_hash_go_f6ef06289889987c(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_p_hash_go_f6ef06289889987c(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_p_hash_go_72faf8364d2f0b3b(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -269,7 +269,7 @@ void *_wrap_Swig_malloc_p_hash_go_f6ef06289889987c(intgo _swig_go_0) {
 }
 
 
-void _wrap_goPhMhImageHash_p_hash_go_f6ef06289889987c(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
+void _wrap_goPhMhImageHash_p_hash_go_72faf8364d2f0b3b(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
   int arg1 ;
   int arg2 ;
   char *arg3 = (char *) 0 ;
@@ -297,7 +297,7 @@ void _wrap_goPhMhImageHash_p_hash_go_f6ef06289889987c(intgo _swig_go_0, intgo _s
 }
 
 
-double _wrap_goPhHammingDistance2_p_hash_go_f6ef06289889987c(_goslice_ _swig_go_0, intgo _swig_go_1, _goslice_ _swig_go_2, intgo _swig_go_3) {
+double _wrap_goPhHammingDistance2_p_hash_go_72faf8364d2f0b3b(_goslice_ _swig_go_0, intgo _swig_go_1, _goslice_ _swig_go_2, intgo _swig_go_3) {
   unsigned char *arg1 = (unsigned char *) 0 ;
   int arg2 ;
   unsigned char *arg3 = (unsigned char *) 0 ;
@@ -330,7 +330,7 @@ double _wrap_goPhHammingDistance2_p_hash_go_f6ef06289889987c(_goslice_ _swig_go_
 }
 
 
-double _wrap_goPhMhImageDistance_p_hash_go_f6ef06289889987c(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
+double _wrap_goPhMhImageDistance_p_hash_go_72faf8364d2f0b3b(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   double result;
