@@ -15,5 +15,5 @@ echo 'APT::Acquire::Retries "9999";' > /etc/apt/apt.conf.d/80-retries
 apt-get update
 apt-get install -y \
   git cmake autoconf automake build-essential \
-  cimg-dev libpthread-stubs0-dev ffmpeg \
+  cimg-dev libpthread-stubs0-dev ffmpeg libtool \
   libpng-dev libjpeg-dev libtiff-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libsndfile1-dev libsamplerate0-dev libmpg123-dev

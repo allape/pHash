@@ -3,13 +3,22 @@
 cd pHash || exit 1
 
 # generate header file
-cmake configure .
 cmake -DWITH_AUDIO_HASH=1 -DWITH_VIDEO_HASH=1 .
 
-# make version match
-aclocal && libtoolize --force && autoconf
+# https://stackoverflow.com/questions/22603163/automake-error-ltmain-sh-not-found
+# automake build
+libtoolize --force
+
+# FIXME building in docker will cause `libtoolize` putting `ltmain.sh` into parent folder
+if [[ ! -z "${DOCKER_BUILDING}" ]]; then
+  mv ../ltmain.sh ./
+fi
+
+aclocal
+autoheader
+autoconf
 automake --add-missing
-autoreconf
+#autoreconf
 
 # final build
 ./configure

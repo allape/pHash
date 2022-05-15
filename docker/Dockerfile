@@ -14,7 +14,8 @@ RUN chmod +x ./prepare.sh && ./prepare.sh
 ADD download.sh ./
 RUN chmod +x ./download.sh && ./download.sh
 
+ENV DOCKER_BUILDING "1"
 ADD install.sh ./
 RUN chmod +x ./install.sh && ./install.sh
 
-CMD ["./pHash/examples/test_mhimagehash"]
+CMD ["./pHash/examples/test_mhimagehash", "./pHash/pHash.png", "./pHash/pHash.png"]

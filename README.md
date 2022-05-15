@@ -1,35 +1,12 @@
 # pHash - http://www.phash.org
 
-### ⚠️ `av_frame_alloc` may emit errors, not tested in Windows ⚠️
-
-### What have I done with [the original repo](https://github.com/aetilius/pHash) on Ubuntu:focal as root
-```bash
-apt update
-#apt install --fix-missing
-#apt autoremove
-
-apt install -y \
-  git \
-  autoconf automake \
-  cmake build-essential
-
-apt install -y \
-  cimg-dev libpthread-stubs0-dev ffmpeg \
-  libpng-dev libjpeg-dev libtiff-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libsndfile1-dev libsamplerate0-dev libmpg123-dev
-
-official_version="pHash-0.9.6"
-
-git clone "https://github.com/aetilius/pHash"
-
-wget "http://www.phash.org/releases/$official_version.tar.gz"
-tar -xvzf "$official_version.tar.gz"
-
-cp "$official_version/configure.ac" "pHash/configure.ac"
-cp "$official_version/Makefile.am" "pHash/Makefile.am"
-cp -R "$official_version/m4" "pHash/m4"
-```
+### ⚠️ `av_frame_alloc` in [`phash-win32/src/cimgffmpeg.cpp`](phash-win32/src/cimgffmpeg.cpp) may emit errors, not tested in Windows ⚠️
 
 ### Modified Files, Base on [Official Repo](https://github.com/aetilius/pHash) and [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
+- Migrated from [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
+  - configure.ac
+  - Makefile.am
+  - m4/ax_pthread.m4
 - Modified
   - .gitignore
   - configure.ac
@@ -38,10 +15,6 @@ cp -R "$official_version/m4" "pHash/m4"
   - phash-win32/src/cimgffmpeg.cpp
   - src/Makefile.am
   - src/Makefile.in
-- Migrated
-  - configure.ac
-  - Makefile.am
-  - m4/ax_pthread.m4
 - New
   - bindings/go/*
   - docker/*
@@ -50,6 +23,7 @@ cp -R "$official_version/m4" "pHash/m4"
 ### Installation on Ubuntu:focal with `aliyun` mirror
 ```bash
 chmod +x ./docker/prepare.sh && ./docker/prepare.sh
+chmod +x ./docker/download.sh && ./docker/download.sh
 chmod +x ./docker/install.sh && ./docker/install.sh
 
 # test
