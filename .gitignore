@@ -21,6 +21,7 @@ CPackSourceConfig.cmake
 depcomp
 install-sh
 libtool
+ltmain.sh
 Makefile
 Makefile.in
 missing
@@ -42,11 +43,13 @@ src/Makefile
 examples/.deps
 examples/.libs
 examples/Makefile
+examples/Makefile.in
 examples/test_*.o
 examples/test_audio
 examples/test_image
 examples/test_mhimagehash
 examples/test_texthash
+examples/test_video
 
 bindings/Makefile
 bindings/Makefile.in

@@ -20,3 +20,6 @@ automake --add-missing
 # final build
 ./configure
 make && make install
+
+# https://stackoverflow.com/questions/4514997/error-loading-shared-libraries
+ldconfig
