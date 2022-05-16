@@ -1,7 +1,6 @@
 # pHash - http://www.phash.org
 
 ### ⚠️ `av_frame_alloc` in [`phash-win32/src/cimgffmpeg.cpp`](phash-win32/src/cimgffmpeg.cpp) may emit errors, not tested in Windows
-### ⚠️ With video hashing enabled, `Go` binding will emit `error while loading shared libraries: libpHash.so.0: cannot open shared object file: No such file or directory`
 
 ### Modified Files, Base on [Official Repo](https://github.com/aetilius/pHash) and [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
 - Migrated from [Official Download](http://www.phash.org/releases/pHash-0.9.6.tar.gz)
