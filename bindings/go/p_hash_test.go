@@ -52,3 +52,16 @@ func TestHashStringDistance(t *testing.T) {
 		t.Fatalf("Unexpect %v\n", distance)
 	}
 }
+
+func TestVideoHashing(t *testing.T) {
+	fmt.Printf("\nTestVideoHashing\n")
+
+	keyFrameHashes := make([]uint64, 10)
+	keyFrameCount := GoPhDctVideohash("2.mp4", keyFrameHashes)
+
+	fmt.Printf("key frame count: %d\n", keyFrameCount)
+
+	for index, hash := range keyFrameHashes {
+		fmt.Printf("key frame %d = %016x\n", index+1, hash)
+	}
+}

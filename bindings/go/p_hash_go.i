@@ -10,6 +10,8 @@
 %apply unsigned char *INOUT { unsigned char *hash1 };
 %apply unsigned char *INOUT { unsigned char *hash2 };
 
+%apply unsigned long *INOUT { unsigned long *videoHashes };
+
 %include "p_hash_go.h"
 
 %go_import("errors")

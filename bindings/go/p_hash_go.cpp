@@ -44,3 +44,13 @@ double goPhMhImageDistance(char *img1, char *img2) {
 
     return dist;
 }
+
+int goPhDctVideohash(char *videoFilePath, unsigned long *videoHashes) {
+    int keyframeCount;
+    ulong64 *hashes = ph_dct_videohash(videoFilePath, keyframeCount);
+    for (int i = 0; i < keyframeCount; i++) {
+        videoHashes[i] = hashes[i];
+    }
+    free(hashes);
+    return keyframeCount;
+}
