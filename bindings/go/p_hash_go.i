@@ -19,8 +19,8 @@
 %insert(go_wrapper) %{
 func ImageHashString(alpha, level int, image string) (string, error) {
     hash := make([]byte, 256)
-    GoPhMhImageHash(alpha, level, image, hash)
-    if len(hash) < 1 {
+    result := GoPhMhImageHash(alpha, level, image, hash)
+    if len(hash) < 1 || result != 0 {
         return "", errors.New("Not a valid hash wrapper array")
     }
     hashLength := int(hash[0])
