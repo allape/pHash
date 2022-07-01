@@ -269,11 +269,13 @@ void *_wrap_Swig_malloc_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0) {
 }
 
 
-void _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
+intgo _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
   int arg1 ;
   int arg2 ;
   char *arg3 = (char *) 0 ;
   unsigned char *arg4 = (unsigned char *) 0 ;
+  int result;
+  intgo _swig_go_result;
   
   arg1 = (int)_swig_go_0; 
   arg2 = (int)_swig_go_1; 
@@ -289,11 +291,12 @@ void _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0, intgo _s
     arg4 = (unsigned char *) _swig_go_3.array;
   }
   
-  goPhMhImageHash(arg1,arg2,arg3,arg4);
-  
+  result = (int)goPhMhImageHash(arg1,arg2,arg3,arg4);
+  _swig_go_result = result; 
   
   free(arg3); 
   
+  return _swig_go_result;
 }
 
 

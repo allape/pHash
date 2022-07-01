@@ -14,11 +14,17 @@ void hashWithLength(uint8_t *hash, int hashLen, unsigned char *output) {
     }
 }
 
-void goPhMhImageHash(int alpha, int level, char *img, unsigned char *output) {
+int goPhMhImageHash(int alpha, int level, char *img, unsigned char *output) {
     int hashlen;
-    uint8_t *hash = ph_mh_imagehash(img, hashlen, alpha, level);
-    hashWithLength(hash, hashlen, output);
-    free(hash);
+    try {
+        uint8_t *hash = ph_mh_imagehash(img, hashlen, alpha, level);
+        hashWithLength(hash, hashlen, output);
+        free(hash);
+        return 0;
+    } catch (...) {
+        // ignore
+    }
+    return -1;
 }
 
 double goPhHammingDistance2(unsigned char *hash1, int hashlen1, unsigned char *hash2, int hashlen2) {

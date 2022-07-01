@@ -39,7 +39,7 @@ typedef _gostring_ swig_type_7;
 typedef _goslice_ swig_type_8;
 extern void _wrap_Swig_free_p_hash_go_297f06d25cbecf3c(uintptr_t arg1);
 extern uintptr_t _wrap_Swig_malloc_p_hash_go_297f06d25cbecf3c(swig_intgo arg1);
-extern void _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(swig_intgo arg1, swig_intgo arg2, swig_type_1 arg3, swig_type_2 arg4);
+extern swig_intgo _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(swig_intgo arg1, swig_intgo arg2, swig_type_1 arg3, swig_type_2 arg4);
 extern double _wrap_goPhHammingDistance2_p_hash_go_297f06d25cbecf3c(swig_type_3 arg1, swig_intgo arg2, swig_type_4 arg3, swig_intgo arg4);
 extern double _wrap_goPhMhImageDistance_p_hash_go_297f06d25cbecf3c(swig_type_5 arg1, swig_type_6 arg2);
 extern swig_intgo _wrap_goPhDctVideohash_p_hash_go_297f06d25cbecf3c(swig_type_7 arg1, swig_type_8 arg2);
@@ -53,18 +53,13 @@ import "sync"
 import "errors"
 import "encoding/hex"
 
-
 type _ unsafe.Pointer
-
-
 
 var Swig_escape_always_false bool
 var Swig_escape_val interface{}
 
-
 type _swig_fnptr *byte
 type _swig_memberptr *byte
-
 
 type _ sync.Mutex
 
@@ -80,18 +75,20 @@ func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	return swig_r
 }
 
-func GoPhMhImageHash(arg1 int, arg2 int, arg3 string, arg4 []byte) {
+func GoPhMhImageHash(arg1 int, arg2 int, arg3 string, arg4 []byte) (_swig_ret int) {
+	var swig_r int
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(C.swig_intgo(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_3)))
+	swig_r = (int)(C._wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(C.swig_intgo(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_2)), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
 	if Swig_escape_always_false {
 		Swig_escape_val = arg4
 	}
+	return swig_r
 }
 
 func GoPhHammingDistance2(arg1 []byte, arg2 int, arg3 []byte, arg4 int) (_swig_ret float64) {
@@ -138,31 +135,28 @@ func GoPhDctVideohash(arg1 string, arg2 []uint64) (_swig_ret int) {
 	return swig_r
 }
 
-
 func ImageHashString(alpha, level int, image string) (string, error) {
-    hash := make([]byte, 256)
-    GoPhMhImageHash(alpha, level, image, hash)
-    if len(hash) < 1 {
-        return "", errors.New("Not a valid hash wrapper array")
-    }
-    hashLength := int(hash[0])
-    if hashLength < 1 {
-        return "", errors.New("Not a valid hash array")
-    }
-    return hex.EncodeToString(hash[1:hashLength+1]), nil
+	hash := make([]byte, 256)
+	GoPhMhImageHash(alpha, level, image, hash)
+	if len(hash) < 1 {
+		return "", errors.New("Not a valid hash wrapper array")
+	}
+	hashLength := int(hash[0])
+	if hashLength < 1 {
+		return "", errors.New("Not a valid hash array")
+	}
+	return hex.EncodeToString(hash[1 : hashLength+1]), nil
 }
 
 func HashStringDistance(hash1, hash2 string) (float64, error) {
-    hashByteArr1, err := hex.DecodeString(hash1)
-    if err != nil {
-        return 0, err
-    }
-    hashByteArr2, err := hex.DecodeString(hash2)
-    if err != nil {
-        return 0, err
-    }
-    distance := GoPhHammingDistance2(hashByteArr1, len(hashByteArr1), hashByteArr2, len(hashByteArr2))
-    return distance, nil
+	hashByteArr1, err := hex.DecodeString(hash1)
+	if err != nil {
+		return 0, err
+	}
+	hashByteArr2, err := hex.DecodeString(hash2)
+	if err != nil {
+		return 0, err
+	}
+	distance := GoPhHammingDistance2(hashByteArr1, len(hashByteArr1), hashByteArr2, len(hashByteArr2))
+	return distance, nil
 }
-
-
