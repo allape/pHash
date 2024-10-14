@@ -1,9 +1,0 @@
-FROM ubuntu:focal
-
-WORKDIR /app
-
-# prevent `ztdata` prompt an user interactive dialog
-ARG DEBIAN_FRONTEND=noninteractive
-
-COPY prepare.sh .
-RUN chmod +x ./prepare.sh && ./prepare.sh

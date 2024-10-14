@@ -48,6 +48,7 @@ examples/test_*.o
 examples/test_audio
 examples/test_image
 examples/test_mhimagehash
+examples/test_printimagehash
 examples/test_texthash
 examples/test_video
 

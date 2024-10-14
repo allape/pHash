@@ -8,9 +8,9 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-// source: p_hash_go.i
+// source: gophash.i
 
-#define SWIGMODULE p_hash_go
+#define SWIGMODULE gophash
 
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
@@ -240,13 +240,13 @@ static void* Swig_malloc(int c) {
 }
 
 
-#include "p_hash_go.h"
+#include "gophash.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void _wrap_Swig_free_p_hash_go_297f06d25cbecf3c(void *_swig_go_0) {
+void _wrap_Swig_free_gophash_581a55df942623fd(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -256,7 +256,7 @@ void _wrap_Swig_free_p_hash_go_297f06d25cbecf3c(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_gophash_581a55df942623fd(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -269,7 +269,7 @@ void *_wrap_Swig_malloc_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0) {
 }
 
 
-intgo _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
+intgo _wrap_goPhMhImageHash_gophash_581a55df942623fd(intgo _swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2, _goslice_ _swig_go_3) {
   int arg1 ;
   int arg2 ;
   char *arg3 = (char *) 0 ;
@@ -295,91 +295,6 @@ intgo _wrap_goPhMhImageHash_p_hash_go_297f06d25cbecf3c(intgo _swig_go_0, intgo _
   _swig_go_result = result; 
   
   free(arg3); 
-  
-  return _swig_go_result;
-}
-
-
-double _wrap_goPhHammingDistance2_p_hash_go_297f06d25cbecf3c(_goslice_ _swig_go_0, intgo _swig_go_1, _goslice_ _swig_go_2, intgo _swig_go_3) {
-  unsigned char *arg1 = (unsigned char *) 0 ;
-  int arg2 ;
-  unsigned char *arg3 = (unsigned char *) 0 ;
-  int arg4 ;
-  double result;
-  double _swig_go_result;
-  
-  {
-    if (_swig_go_0.len == 0) {
-      _swig_gopanic("array must contain at least 1 element");
-    }
-    arg1 = (unsigned char *) _swig_go_0.array;
-  }
-  arg2 = (int)_swig_go_1; 
-  {
-    if (_swig_go_2.len == 0) {
-      _swig_gopanic("array must contain at least 1 element");
-    }
-    arg3 = (unsigned char *) _swig_go_2.array;
-  }
-  arg4 = (int)_swig_go_3; 
-  
-  result = (double)goPhHammingDistance2(arg1,arg2,arg3,arg4);
-  _swig_go_result = result; 
-  
-  
-  
-  
-  return _swig_go_result;
-}
-
-
-double _wrap_goPhMhImageDistance_p_hash_go_297f06d25cbecf3c(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
-  char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) 0 ;
-  double result;
-  double _swig_go_result;
-  
-  
-  arg1 = (char *)malloc(_swig_go_0.n + 1);
-  memcpy(arg1, _swig_go_0.p, _swig_go_0.n);
-  arg1[_swig_go_0.n] = '\0';
-  
-  
-  arg2 = (char *)malloc(_swig_go_1.n + 1);
-  memcpy(arg2, _swig_go_1.p, _swig_go_1.n);
-  arg2[_swig_go_1.n] = '\0';
-  
-  
-  result = (double)goPhMhImageDistance(arg1,arg2);
-  _swig_go_result = result; 
-  free(arg1); 
-  free(arg2); 
-  return _swig_go_result;
-}
-
-
-intgo _wrap_goPhDctVideohash_p_hash_go_297f06d25cbecf3c(_gostring_ _swig_go_0, _goslice_ _swig_go_1) {
-  char *arg1 = (char *) 0 ;
-  unsigned long *arg2 = (unsigned long *) 0 ;
-  int result;
-  intgo _swig_go_result;
-  
-  
-  arg1 = (char *)malloc(_swig_go_0.n + 1);
-  memcpy(arg1, _swig_go_0.p, _swig_go_0.n);
-  arg1[_swig_go_0.n] = '\0';
-  
-  {
-    if (_swig_go_1.len == 0) {
-      _swig_gopanic("array must contain at least 1 element");
-    }
-    arg2 = (unsigned long *) _swig_go_1.array;
-  }
-  
-  result = (int)goPhDctVideohash(arg1,arg2);
-  _swig_go_result = result; 
-  
-  free(arg1); 
   
   return _swig_go_result;
 }

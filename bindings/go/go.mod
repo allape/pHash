@@ -1,3 +1,3 @@
-module p_hash_go
+module gophash
 
-go 1.18
+go 1.32
