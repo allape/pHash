@@ -8,7 +8,7 @@ RUN apk add libpng-dev libjpeg-turbo-dev tiff-dev
 RUN test -n "$http_proxy" && git config --global http.proxy $http_proxy || exit 0
 RUN test -n "$https_proxy" && git config --global https.proxy $https_proxy || exit 0
 
-RUN git clone https://github.com/allape/pHash.git
+RUN git clone --depth=1 https://github.com/allape/pHash.git
 
 RUN git config --global --unset http.proxy && git config --global --unset https.proxy || exit 0
 
