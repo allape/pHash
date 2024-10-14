@@ -19,7 +19,7 @@
       `CGO_LDFLAGS_ALLOW='--verbose'`.
 - Tests
   ```bash
-    go test
+    /usr/local/go/bin/go test
   ```
 - Installation
   ```bash
