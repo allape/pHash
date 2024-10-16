@@ -2,7 +2,7 @@ FROM allape/phash
 
 ARG GO_NAME="go1.23.2.linux-amd64.tar.gz"
 
-RUN apk update && apk add wget libwebp-dev ffmpeg
+RUN apk update && apk add wget
 
 WORKDIR /app
 
