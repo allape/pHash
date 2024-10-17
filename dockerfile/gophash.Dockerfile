@@ -1,4 +1,4 @@
-FROM allape/phash
+FROM allape/phash:3.16
 
 ARG GO_NAME="go1.23.2.linux-amd64.tar.gz"
 

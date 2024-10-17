@@ -7,7 +7,7 @@ using namespace cimg_library;
 
 int main(int argc, char **argv) {
     if (argc < 2) {
-        printf(" not enough input args\n");
+        printf("not enough input args\n");
         exit(1);
     }
 
@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
 
     int hashlen1;
 
-    printf("file1: %s\n", img1);
     uint8_t *hash1 = ph_mh_imagehash(img1, hashlen1, alpha, level);
 
     for (int i = 0; i < hashlen1; i++) {
