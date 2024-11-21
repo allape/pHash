@@ -13,9 +13,9 @@ WORKDIR /app/pHash
 RUN ln -s /app/pHash/bindings/go /usr/local/go/src/gophash
 RUN cd /usr/local/go/src/gophash && /usr/local/go/bin/go install
 
-# export docker_http_proxy=http://ip:1080
 # cd ..
-# docker build -f dockerfile/gophash.Dockerfile --build-arg http_proxy=$docker_http_proxy --build-arg https_proxy=$docker_http_proxy --progress plain -t allape/gophash .
+# export docker_http_proxy=http://host.docker.internal:1080
+# docker build --platform linux/amd64 -f dockerfile/gophash.Dockerfile --build-arg http_proxy=$docker_http_proxy --build-arg https_proxy=$docker_http_proxy -t allape/gophash .
 
 # test
 # docker run --rm allape/gophash /usr/local/go/bin/go test -v /usr/local/go/src/gophash
